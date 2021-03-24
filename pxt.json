@@ -1,5 +1,5 @@
 {
-    "name": "Traffic light",
+    "name": "Traffic light RST",
     "description": "",
     "dependencies": {
         "core": "*",
