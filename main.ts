@@ -11,6 +11,11 @@ input.onButtonPressed(Button.A, function () {
         pins.digitalWritePin(DigitalPin.P2, 0)
     }
 })
+input.onButtonPressed(Button.AB, function () {
+    while (true) {
+    	
+    }
+})
 input.onButtonPressed(Button.B, function () {
 	
 })
