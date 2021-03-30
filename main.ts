@@ -30,7 +30,7 @@ input.onButtonPressed(Button.B, function () {
     while (true) {
         pins.digitalWritePin(DigitalPin.P0, 1)
         basic.showIcon(IconNames.StickFigure)
-        basic.pause(60000)
+        basic.pause(1000)
         basic.clearScreen()
         Number2 += 1
         basic.pause(2000)
@@ -43,15 +43,15 @@ input.onButtonPressed(Button.B, function () {
                 basic.pause(1000)
             }
         }
-        basic.pause(3300)
+        basic.pause(1000)
         pins.digitalWritePin(DigitalPin.P1, 0)
         pins.digitalWritePin(DigitalPin.P2, 1)
         while (pins.digitalReadPin(DigitalPin.P0) == 0) {
             if (pins.digitalReadPin(DigitalPin.P0) == 0) {
-                basic.showString("Stop walkimg")
+                basic.showString("stop")
             }
         }
-        basic.pause(120000)
+        basic.pause(500)
         pins.digitalWritePin(DigitalPin.P2, 0)
     }
 })
