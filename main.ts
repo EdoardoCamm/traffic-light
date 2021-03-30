@@ -39,7 +39,7 @@ input.onButtonPressed(Button.B, function () {
         pins.digitalWritePin(DigitalPin.P2, 1)
         while (pins.digitalReadPin(DigitalPin.P0) == 0) {
             if (pins.digitalReadPin(DigitalPin.P0) == 0) {
-                basic.showIcon(IconNames.Pitchfork)
+                basic.showString("Stop walkimg")
             }
         }
         basic.pause(100)
@@ -48,7 +48,9 @@ input.onButtonPressed(Button.B, function () {
 })
 input.onGesture(Gesture.Shake, function () {
     while (true) {
-    	
+        pins.digitalWritePin(DigitalPin.P2, 1)
+        basic.pause(200)
+        pins.digitalWritePin(DigitalPin.P2, 0)
     }
 })
 let Number2 = 0
