@@ -15,13 +15,22 @@ input.onButtonPressed(Button.A, function () {
     }
 })
 input.onButtonPressed(Button.AB, function () {
-	
+    for (let index = 0; index <= 4; index++) {
+        pins.digitalWritePin(DigitalPin.P1, 1)
+        basic.pause(500)
+        pins.digitalWritePin(DigitalPin.P1, 0)
+        basic.pause(500)
+        pins.digitalWritePin(DigitalPin.P1, 1)
+        basic.pause(500)
+        pins.digitalWritePin(DigitalPin.P1, 0)
+        basic.pause(500)
+    }
 })
 input.onButtonPressed(Button.B, function () {
     while (true) {
         pins.digitalWritePin(DigitalPin.P0, 1)
         basic.showIcon(IconNames.StickFigure)
-        basic.pause(2000)
+        basic.pause(60000)
         basic.clearScreen()
         Number2 += 1
         basic.pause(2000)
@@ -34,7 +43,7 @@ input.onButtonPressed(Button.B, function () {
                 basic.pause(1000)
             }
         }
-        basic.pause(100)
+        basic.pause(3300)
         pins.digitalWritePin(DigitalPin.P1, 0)
         pins.digitalWritePin(DigitalPin.P2, 1)
         while (pins.digitalReadPin(DigitalPin.P0) == 0) {
@@ -42,15 +51,20 @@ input.onButtonPressed(Button.B, function () {
                 basic.showString("Stop walkimg")
             }
         }
-        basic.pause(100)
+        basic.pause(120000)
         pins.digitalWritePin(DigitalPin.P2, 0)
     }
 })
 input.onGesture(Gesture.Shake, function () {
-    while (true) {
+    for (let index = 0; index <= 4; index++) {
         pins.digitalWritePin(DigitalPin.P2, 1)
-        basic.pause(200)
+        basic.pause(500)
         pins.digitalWritePin(DigitalPin.P2, 0)
+        basic.pause(500)
+        pins.digitalWritePin(DigitalPin.P2, 1)
+        basic.pause(500)
+        pins.digitalWritePin(DigitalPin.P2, 0)
+        basic.pause(500)
     }
 })
 let Number2 = 0
