@@ -40,7 +40,7 @@ input.onButtonPressed(Button.B, function () {
             for (let index = 0; index <= 13; index++) {
                 Number2 = 13 - index
                 basic.showNumber(Number2)
-                basic.pause(1000)
+                basic.pause(100)
             }
         }
         basic.pause(1000)
