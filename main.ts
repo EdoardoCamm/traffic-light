@@ -30,28 +30,44 @@ input.onButtonPressed(Button.B, function () {
     while (true) {
         pins.digitalWritePin(DigitalPin.P0, 1)
         basic.showIcon(IconNames.StickFigure)
-        basic.pause(1000)
+        basic.pause(7000)
         basic.clearScreen()
-        Number2 += 1
-        basic.pause(2000)
+        for (let index = 0; index <= 13; index++) {
+            Number2 = 13 - index
+            basic.showNumber(Number2)
+            basic.pause(1000)
+        }
+        basic.clearScreen()
+        basic.showLeds(`
+            . # # # .
+            # . . # #
+            # . # . #
+            # # . . #
+            . # # # .
+            `)
+        basic.pause(40000)
         pins.digitalWritePin(DigitalPin.P0, 0)
         pins.digitalWritePin(DigitalPin.P1, 1)
-        if (pins.digitalReadPin(DigitalPin.P0) == 0) {
-            for (let index = 0; index <= 13; index++) {
-                Number2 = 13 - index
-                basic.showNumber(Number2)
-                basic.pause(100)
-            }
-        }
-        basic.pause(1000)
+        basic.showLeds(`
+            . # # # .
+            # . . # #
+            # . # . #
+            # # . . #
+            . # # # .
+            `)
+        basic.pause(3300)
         pins.digitalWritePin(DigitalPin.P1, 0)
         pins.digitalWritePin(DigitalPin.P2, 1)
-        while (pins.digitalReadPin(DigitalPin.P0) == 0) {
-            if (pins.digitalReadPin(DigitalPin.P0) == 0) {
-                basic.showString("stop")
-            }
+        if (pins.digitalReadPin(DigitalPin.P0) == 0) {
+            basic.showLeds(`
+                . # # # .
+                # . . # #
+                # . # . #
+                # # . . #
+                . # # # .
+                `)
         }
-        basic.pause(500)
+        basic.pause(120000)
         pins.digitalWritePin(DigitalPin.P2, 0)
     }
 })
